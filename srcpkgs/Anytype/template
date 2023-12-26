@@ -1,0 +1,23 @@
+# Template file for 'Anytype'
+pkgname=Anytype
+version=0.37.0
+revision=1
+archs="x86_64"
+depends="fuse"
+short_desc="Everything app for those who celebrate trust & autonomy"
+maintainer="Wilf Silver <git@wilfsilver.co.uk>"
+license="custom"
+homepage="https://anytype.io/"
+_appimage="Anytype-${version}.AppImage"
+distfiles="https://anytype-release.fra1.cdn.digitaloceanspaces.com/${_appimage}"
+checksum=678e864dc2686aabe356ec543fe3aec43df628cd0d408496325bf7b9ca39afa8
+skip_extraction="${_appimage}"
+nopie=yes
+nostrip=yes
+
+do_install() {
+	vbin ${XBPS_SRCDISTDIR}/${pkgname}-${version}/${_appimage} anytype
+
+	vinstall ${FILESDIR}/anytype.desktop 644 usr/share/applications
+	vinstall ${FILESDIR}/anytype.png 644 usr/share/icons/hicolor/128x128/apps
+}
