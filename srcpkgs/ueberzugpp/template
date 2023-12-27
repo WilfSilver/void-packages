@@ -1,0 +1,19 @@
+# Template file for 'ueberzugpp'
+# Inspired by https://aur.archlinux.org/packages/ueberzugpp
+pkgname=ueberzugpp
+version=2.9.2
+revision=1
+build_style=cmake
+configure_args="-DENABLE_TURBOBASE64=ON -DENABLE_WAYLAND=ON -DENABLE_XCB_ERRORS=ON -DENABLE_OPENGL=ON -Wno-dev"
+# CMake is a dependency to allow it to download remote resources during building
+hostmakedepends="pkg-config"
+makedepends="libopencv-devel libsixel-devel libvips-devel wayland-protocols wayland-devel chafa-devel openssl-devel fmt-devel spdlog tbb-devel extra-cmake-modules Turbo-Base64 microsoft-gsl cli11 libglvnd-devel nlohmann-json libxcb-devel xcb-util-image-devel xcb-util-errors-devel"
+depends="opencv libsixel libvips libxcb xcb-util-image openssl chafa tbb xcb-util-errors Turbo-Base64 fmt spdlog libglvnd"
+conflicts="ueberzug"
+provides="ueberzug"
+short_desc="Command line util which allows to display images in combination with X11 written in C++"
+maintainer="Wilf Silver <git@wilfsilver.co.uk>"
+license="GPL-3.0-or-later"
+homepage="https://github.com/jstkdng/ueberzugpp"
+distfiles="https://github.com/jstkdng/${pkgname}/archive/refs/tags/v${version}.tar.gz"
+checksum=a658ccdb82c50ebd3bf31ecaaa79bcbb66bae756c3b588d4208c94a17f127f42

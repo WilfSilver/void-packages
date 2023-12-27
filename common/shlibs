@@ -4308,3 +4308,4 @@ libmsgraph-0.so.1 msgraph-0.2.1_1
 libgtk-session-lock.so.0 gtk-session-lock-0.2.0_1
 libcamera.so.0.2 libcamera-0.2.0_1
 libcamera-base.so.0.2 libcamera-0.2.0_1
+libbase64.so Turbo-Base64-2023.08_1

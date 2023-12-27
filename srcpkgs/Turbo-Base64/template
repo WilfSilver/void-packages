@@ -1,0 +1,13 @@
+# Template file for 'Turbo-Base64'
+# Inspired by https://aur.archlinux.org/pkgbase/turbo-base64/
+pkgname=Turbo-Base64
+version=2023.08
+revision=1
+build_style=cmake
+configure_args="-DBUILD_SHARED_LIBS=ON -Wno-dev"
+short_desc="Fastest Base64 SIMD Encoding library"
+maintainer="Wilf Silver <git@wilfsilver.co.uk>"
+license="GPL-3.0-or-later"
+homepage="https://github.com/powturbo/Turbo-Base64"
+distfiles="https://github.com/powturbo/${pkgname}/archive/refs/tags/${version}.tar.gz"
+checksum=b874ef7731ce5c1bcf665b703fca1ce896bfe8aaed2725ac725b4f1762eda5b8

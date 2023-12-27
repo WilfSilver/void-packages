@@ -1,0 +1,15 @@
+# Template file for 'cli11'
+# Inspired by https://gitlab.archlinux.org/archlinux/packaging/packages/cli11
+pkgname=cli11
+version=2.3.2
+revision=1
+build_style=cmake
+# This is here so it can request files from other locations
+hostmakedepends="cmake"
+configure_args="-DCMAKE_BUILD_TYPE=Release -DCLI11_BUILD_TEST=OFF -DCLI11_BUILD_EXAMPLES=OFF"
+short_desc="Command line parser for C++11"
+maintainer="Wilf Silver <git@wilfsilver.co.uk>"
+license="BSD"
+homepage="https://github.com/CLIUtils/CLI11"
+distfiles="https://github.com/CLIUtils/CLI11/archive/v${version}/${pkgname}-${version}.tar.gz"
+checksum=aac0ab42108131ac5d3344a9db0fdf25c4db652296641955720a4fbe52334e22
