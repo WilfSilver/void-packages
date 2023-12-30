@@ -1,0 +1,27 @@
+# Template file for 'duplicati'
+# Heavily inspired from https://aur.archlinux.org/packages/duplicati-canary-bin
+pkgname=duplicati
+version=2.0.7.100
+revision=1
+_date=2023-05-25
+_branch=canary
+depends="gtk-sharp2 libappindicator mono openssl"
+short_desc="Free backup client that securely stores encrypted, incremental, compressed backups on cloud storage services and remote file servers"
+maintainer="Wilf Silver <git@wilfsilver.co.uk>"
+license="LGPL"
+homepage="http://duplicati.com"
+distfiles="https://github.com/duplicati/duplicati/releases/download/v${version}-${version}_${_branch}_${_date}/${pkgname}-${version}_${_branch}_${_date}.zip"
+checksum=1faaf47b824440484c4ca808bc9a22b9125f27df73d33f20f4d6bcc3d7e3245e
+python_version=3
+system_accounts="duplicati"
+make_dirs="/var/lib/${pkgname} 700 duplicati duplicati"
+
+do_install() {
+  vinstall ${FILESDIR}/${pkgname}.env 644 etc/default ${pkgname}
+  vinstall ${FILESDIR}/${pkgname}.tmpfiles.conf 644 usr/lib/tmpfiles.d ${pkgname}.conf
+  vbin ${FILESDIR}/duplicati-cli
+  vsv ${pkgname}
+
+  vmkdir opt/${pkgname}
+  vcopy ./* opt/${pkgname}
+}
