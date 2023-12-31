@@ -1,6 +1,6 @@
 # Template file for 'Anytype'
 pkgname=Anytype
-version=0.37.0
+version=0.37.3
 revision=1
 archs="x86_64"
 depends="fuse"
@@ -10,7 +10,7 @@ license="custom"
 homepage="https://anytype.io/"
 _appimage="Anytype-${version}.AppImage"
 distfiles="https://anytype-release.fra1.cdn.digitaloceanspaces.com/${_appimage}"
-checksum=678e864dc2686aabe356ec543fe3aec43df628cd0d408496325bf7b9ca39afa8
+checksum=5b7a7aecbd3b5ce12d5d896e23e4ef8205c175a35169dca965cf4c3ba4138783
 skip_extraction="${_appimage}"
 nopie=yes
 nostrip=yes
