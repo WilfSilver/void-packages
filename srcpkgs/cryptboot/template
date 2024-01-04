@@ -1,0 +1,17 @@
+# Template file for 'cryptboot'
+pkgname=cryptboot
+version=1.1.0
+revision=1
+depends="cryptsetup grub efibootmgr efitools sbsigntool"
+short_desc="Encrypted boot partition manager with UEFI Secure Boot support"
+maintainer="Wilf Silver <git@wilfsilver.co.uk>"
+license="GPL-3.0-or-later"
+homepage="https://github.com/xmikos/cryptboot"
+distfiles="https://github.com/xmikos/cryptboot/archive/v${version}.tar.gz"
+checksum=f3227cbe2847d389b6c340a73e26f6859c18f6eef662a7822b5582cfee6d5538
+
+do_install() {
+  vbin cryptboot
+  vbin cryptboot-efikeys
+  vinstall cryptboot.conf 644 etc
+}
