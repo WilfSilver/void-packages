@@ -1,0 +1,10 @@
+[Desktop Entry]
+Name=Bazecor
+Comment=Graphical configurator for Dygma keyboards
+Exec=env DESKTOPINTEGRATION=0 APPIMAGELAUNCHER_DISABLE=1 Bazecor
+Terminal=false
+Type=Application
+Icon=Bazecor
+StartupWMClass=Bazecor
+X-AppImage-Version=1.1.3
+Categories=Internet;

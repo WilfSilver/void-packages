@@ -1,0 +1,23 @@
+# Template file for 'Anytype'
+pkgname=Bazecor
+version=1.3.11
+revision=1
+depends="fuse"
+archs="x86_64"
+short_desc="Graphical configurator for Dygma keyboards"
+maintainer="Wilf Silver <git@wilfsilver.co.uk>"
+license="GPL-3"
+homepage="https://github.com/Dygmalab/Bazecor"
+_appimage="${pkgname}-${version}-x64.AppImage"
+distfiles="${homepage}/releases/download/v${version}/Bazecor-${version}-x64.AppImage"
+checksum=88cbab4031740813272678e612034829877c0b9078160b8c8b826a6b7747af7a
+skip_extraction="${_appimage}"
+nopie=yes
+nostrip=yes
+
+do_install() {
+	vbin ${XBPS_SRCDISTDIR}/${pkgname}-${version}/${_appimage} ${pkgname}
+
+	vinstall ${FILESDIR}/${pkgname}.desktop 644 usr/share/applications
+	vinstall ${FILESDIR}/${pkgname}.png 644 usr/share/icons/hicolor/128x128/apps
+}
