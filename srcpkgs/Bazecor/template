@@ -1,6 +1,6 @@
 # Template file for 'Anytype'
 pkgname=Bazecor
-version=1.4.3
+version=1.5.0
 revision=1
 depends="fuse"
 archs="x86_64"
@@ -10,7 +10,7 @@ license="GPL-3"
 homepage="https://github.com/Dygmalab/Bazecor"
 _appimage="${pkgname}-${version}-x64.AppImage"
 distfiles="${homepage}/releases/download/v${version}/Bazecor-${version}-x64.AppImage"
-checksum=fe7f52599abb1ce2e2b84d17ebeb5c23b4752566630c499b943ec840a984ad94
+checksum=7310d336dc72d803c08e71f0fdc55dd7f8546b301226ce3aac21cd190fc96d23
 skip_extraction="${_appimage}"
 nopie=yes
 nostrip=yes
